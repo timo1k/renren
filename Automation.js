@@ -10,15 +10,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Profile = () => {
+const Automation = () => {
   return (
     <Text>
       {" "}
       <Text>
-        {"\n\n\n\n"}PROFILE _ NOTHING{"\n"}
+        {"\n\n\n\n"}AUTOMATION _ NOTHING{"\n"}
       </Text>
     </Text>
   );
 };
 
-export default Profile;
+export default Automation;

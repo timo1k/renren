@@ -7,6 +7,8 @@ import { Ionicons } from "@expo/vector-icons"; // Assuming you're using Expo, if
 // Import your screens for Overview, Activity, Automation, and More
 // import OverviewScreen from "./screens/OverviewScreen";
 import Home from "./Home";
+import Automation from "./Automation";
+import Profile from "./Profile";
 // import AutomationScreen from "./screens/AutomationScreen";
 // import MoreScreen from "./screens/MoreScreen";
 
@@ -27,7 +29,7 @@ const App = () => {
           component={Home}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="" size={size} color={color} />
+              <Ionicons name="home-outline" size={size} color={color} />
             ),
           }}
         />
@@ -36,25 +38,37 @@ const App = () => {
           component={Home}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="" size={size} color={color} />
+              <Ionicons name="file-tray-outline" size={size} color={color} />
             ),
           }}
         />
         <Tab.Screen
           name="Automation"
-          component={Home}
+          component={Automation}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="" size={size} color={color} />
+              <Ionicons
+                name="construct-outline
+              WEB COMPONENT CODE
+              Copied
+              USAGE
+              "
+                size={size}
+                color={color}
+              />
             ),
           }}
         />
         <Tab.Screen
           name="More"
-          component={Home}
+          component={Profile}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="" size={size} color={color} />
+              <Ionicons
+                name="ellipsis-horizontal-circle-outline"
+                size={size}
+                color={color}
+              />
             ),
           }}
         />
