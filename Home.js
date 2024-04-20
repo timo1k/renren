@@ -1,66 +1,42 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  ScrollView,
-  TextInput,
-  Button,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
-import { RNCamera } from "react-native-camera";
+import { View, Text, Image, ScrollView, TextInput, StyleSheet, TouchableOpacity } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons"; // Make sure to import Ionicons from Expo vector icons
 
-const Home = () => {
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: "column",
-      backgroundColor: "black",
-    },
-    preview: {
-      flex: 1,
-      justifyContent: "flex-end",
-      alignItems: "center",
-    },
-    capture: {
-      flex: 0,
-      backgroundColor: "#fff",
-      borderRadius: 5,
-      padding: 15,
-      paddingHorizontal: 20,
-      alignSelf: "center",
-      margin: 20,
-    },
-  });
+import Camera from "./Camera"; // Import your Camera component
 
-  takePicture = async function (camera) {
-    const options = { quality: 0.5, base64: true };
-    const data = await camera.takePictureAsync(options);
-    //  eslint-disable-next-line
-    console.log(data.uri);
+const Tab = createBottomTabNavigator();
+
+const HomeScreen = ({ navigation }) => {
+  const handleImagePress = () => {
+    navigation.navigate('Camera');
   };
+
   return (
     <ScrollView>
-      <Text>
-        {"\n\n\n\n"}RenRen{"\n"}
+      <Text style={{ fontSize: 24, textAlign: 'center', fontWeight: 'bold' }}>
+        {"\n"}Xfinity Home Explorer{"\n"}
       </Text>
-      <View>
-        <Text>Sign to voice app</Text>
+      <TouchableOpacity onPress={handleImagePress}>
         <Image
-          source={{
-            uri: "https://reactnative.dev/docs/assets/p_cat2.png",
-          }}
-          style={{ width: 200, height: 200 }}
+          source={require("./assets/frontButton.png")}
+          style={{ width: 430, height: 400 }}
+        />
+      </TouchableOpacity>
+      <View>
+        <Image
+          source={require("./assets/frontButton.png")}
+          style={{ width: 430, height: 400 }}
         />
       </View>
+      <Text>{"\n\n\n\n"}</Text>
       <TextInput
         style={{
           height: 40,
           borderColor: "gray",
           borderWidth: 1,
         }}
-        defaultValue="You can type in me"
+        defaultValue="You can type"
       />
       <Text>{"\n\n\n\n"}</Text>
       <View></View>
@@ -68,4 +44,29 @@ const Home = () => {
   );
 };
 
-export default Home;
+const MainScreen = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Camera"
+        component={Camera}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="construct-outline" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
+
+export default MainScreen;
