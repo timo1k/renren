@@ -22,15 +22,18 @@ const HomeScreen = ({ navigation }) => {
         {"\n"}Xfinity Home Explorer{"\n"}
       </Text>
       <TouchableOpacity onPress={handleImagePress}>
+        <Text>Living Room {"\n"}</Text>
         <Image
-          source={require("./assets/frontButton.png")}
-          style={{ width: 430, height: 400 }}
+          source={require("./assets/living.jpeg")}
+          style={{ width: 430, height: 300 }}
+          resizeMode="contain"
         />
       </TouchableOpacity>
       <View>
+        <Text>Outside {"\n"}</Text>
         <Image
           source={require("./assets/frontButton.png")}
-          style={{ width: 430, height: 400 }}
+          style={{ width: 430, height: 300 }}
         />
       </View>
       <Text>{"\n\n\n\n"}</Text>
