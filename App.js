@@ -9,6 +9,7 @@ import { Ionicons } from "@expo/vector-icons"; // Assuming you're using Expo, if
 import Home from "./Home";
 import Automation from "./Automation";
 import Profile from "./Profile";
+import Activity from "./Activity";
 // import AutomationScreen from "./screens/AutomationScreen";
 // import MoreScreen from "./screens/MoreScreen";
 
@@ -35,7 +36,7 @@ const App = () => {
         />
         <Tab.Screen
           name="Activity"
-          component={Home}
+          component={Activity}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="file-tray-outline" size={size} color={color} />
