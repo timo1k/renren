@@ -1,38 +1,66 @@
+// Import necessary modules
 import React from "react";
-import { View, Text, Image, ScrollView, TextInput, Button } from "react-native";
-import { RNCamera } from "react-native-camera";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./Home";
-import Profile from "./Profile";
+import { Ionicons } from "@expo/vector-icons"; // Assuming you're using Expo, if not, use appropriate icons library
 
-const Stack = createNativeStackNavigator();
+// Import your screens for Overview, Activity, Automation, and More
+// import OverviewScreen from "./screens/OverviewScreen";
+import Home from "./Home";
+// import AutomationScreen from "./screens/AutomationScreen";
+// import MoreScreen from "./screens/MoreScreen";
+
+// Create a bottom tab navigator
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: "Welcome" }}
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: "blue", // Change this to your preferred color
+          inactiveTintColor: "gray", // Change this to your preferred color
+        }}
+      >
+        <Tab.Screen
+          name="Overview"
+          component={Home}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="" size={size} color={color} />
+            ),
+          }}
         />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-      </Stack.Navigator>
+        <Tab.Screen
+          name="Activity"
+          component={Home}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="" size={size} color={color} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Automation"
+          component={Home}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="" size={size} color={color} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="More"
+          component={Home}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="" size={size} color={color} />
+            ),
+          }}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
-
-const HomeScreen = ({ navigation }) => {
-  return (
-    <Button
-      title="Go to Jane's profile"
-      onPress={() => navigation.navigate("Profile", { name: "Jane" })}
-    />
-  );
-};
-const ProfileScreen = ({ navigation, route }) => {
-  return <Home />;
-};
