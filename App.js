@@ -71,7 +71,7 @@ const App = () => {
           component={Camera} // Use the imported CameraScreen component
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="construct-outline" size={size} color={color} />
+              <Ionicons name="image-outline" size={size} color={color} />
             ),
           }}
         />
