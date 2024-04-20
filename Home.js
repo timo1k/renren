@@ -15,6 +15,9 @@ const HomeScreen = ({ navigation }) => {
   const handleImagePress = () => {
     navigation.navigate("Camera"); // Navigate to the 'Camera' screen
   };
+  const handleImagePress2 = () => {
+    navigation.navigate("Video"); // Navigate to the 'Camera' screen
+  };
 
   return (
     <ScrollView>
@@ -31,15 +34,18 @@ const HomeScreen = ({ navigation }) => {
           resizeMode="contain"
         />
       </TouchableOpacity>
-      <View>
-        <Text style={{ textAlign: "left", fontWeight: "bold" }}>
-          Outside {"\n"}
-        </Text>
-        <Image
-          source={require("./assets/frontButton.png")}
-          style={{ width: 430, height: 300 }}
-        />
-      </View>
+      <TouchableOpacity onPress={handleImagePress2}>
+        <View>
+          <Text style={{ textAlign: "left", fontWeight: "bold" }}>
+            Outside {"\n"}
+          </Text>
+          <Image
+            source={require("./assets/1425628.jpg")}
+            style={{ width: 430, height: 300 }}
+          />
+        </View>
+      </TouchableOpacity>
+
       <Text>{"\n\n\n\n"}</Text>
       <TextInput
         style={{

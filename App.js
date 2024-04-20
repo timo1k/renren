@@ -10,6 +10,7 @@ import Automation from "./Automation";
 import Profile from "./Profile";
 import Activity from "./Activity";
 import Camera from "./Camera";
+import OpenCamera from "./OpenCamera";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -72,6 +73,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="TabNavigator" headerMode="none">
         <Stack.Screen name="TabNavigator" component={TabNavigator} />
         <Stack.Screen name="Camera" component={Camera} />
+        <Stack.Screen name="Video" component={OpenCamera} />
       </Stack.Navigator>
     </NavigationContainer>
   );
