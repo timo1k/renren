@@ -47,15 +47,7 @@ const App = () => {
           component={Automation}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons
-                name="construct-outline
-              WEB COMPONENT CODE
-              Copied
-              USAGE
-              "
-                size={size}
-                color={color}
-              />
+              <Ionicons name="construct-outline" size={size} color={color} />
             ),
           }}
         />
