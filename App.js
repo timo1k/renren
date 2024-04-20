@@ -10,6 +10,7 @@ import Home from "./Home";
 import Automation from "./Automation";
 import Profile from "./Profile";
 import Activity from "./Activity";
+import Camera from "./Camera";
 // import AutomationScreen from "./screens/AutomationScreen";
 // import MoreScreen from "./screens/MoreScreen";
 
@@ -62,6 +63,15 @@ const App = () => {
                 size={size}
                 color={color}
               />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Camera"
+          component={Camera} // Use the imported CameraScreen component
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="construct-outline" size={size} color={color} />
             ),
           }}
         />

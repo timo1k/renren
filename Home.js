@@ -1,20 +1,24 @@
 import React from "react";
-import { View, Text, Image, ScrollView, TextInput, StyleSheet, TouchableOpacity } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons"; // Make sure to import Ionicons from Expo vector icons
-
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
 import Camera from "./Camera"; // Import your Camera component
-
-const Tab = createBottomTabNavigator();
 
 const HomeScreen = ({ navigation }) => {
   const handleImagePress = () => {
-    navigation.navigate('Camera');
+    navigation.navigate("Camera"); // Navigate to the 'Camera' screen
   };
 
   return (
     <ScrollView>
-      <Text style={{ fontSize: 24, textAlign: 'center', fontWeight: 'bold' }}>
+      <Text style={{ fontSize: 24, textAlign: "center", fontWeight: "bold" }}>
         {"\n"}Xfinity Home Explorer{"\n"}
       </Text>
       <TouchableOpacity onPress={handleImagePress}>
@@ -44,29 +48,4 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
-const MainScreen = () => {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Camera"
-        component={Camera}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="construct-outline" size={size} color={color} />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
-};
-
-export default MainScreen;
+export default HomeScreen;
