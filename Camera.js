@@ -1,10 +1,12 @@
 import { Camera, CameraType } from "expo-camera";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ViewCamera() {
   const [type, setType] = useState(CameraType.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
+  const navigation = useNavigation(); // Hook for accessing navigation object
 
   if (!permission) {
     // Camera permissions are still loading
@@ -38,6 +40,12 @@ export default function ViewCamera() {
           </TouchableOpacity>
         </View>
       </Camera>
+      <View>
+        <Button title="Go Back" onPress={() => navigation.goBack()} />
+        <Text> {"\n\n"}</Text>
+      </View>
+
+      {/* Button to go back */}
     </View>
   );
 }

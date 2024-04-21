@@ -5,6 +5,7 @@ import {
   Image,
   ScrollView,
   TextInput,
+  Dimensions,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
@@ -12,6 +13,8 @@ import { useNavigation } from "@react-navigation/native"; // Import useNavigatio
 import Camera from "./Camera"; // Import your Camera component
 
 const HomeScreen = ({ navigation }) => {
+  const screenWidth = Dimensions.get("window").width;
+
   const handleImagePress = () => {
     navigation.navigate("Camera"); // Navigate to the 'Camera' screen
   };
@@ -56,7 +59,15 @@ const HomeScreen = ({ navigation }) => {
         defaultValue="You can type"
       />
       <Text>{"\n\n\n\n"}</Text>
-      <View></View>
+
+      <Image
+        source={require("./assets/need5.png")}
+        style={{
+          width: screenWidth,
+          aspectRatio: 4 / 3,
+          resizeMode: "contain",
+        }}
+      />
     </ScrollView>
   );
 };
