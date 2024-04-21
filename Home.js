@@ -49,7 +49,7 @@ const HomeScreen = ({ navigation }) => {
 
       <Image
         source={require("./assets/need5.png")}
-        style={{ width: 390, height: 1000 }}
+        style={{ width: 422, height: 1000 }}
         resizeMode="contain"
       />
     </ScrollView>
