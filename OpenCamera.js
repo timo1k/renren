@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, ScrollView, StyleSheet, Button } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 import { ResizeMode } from "expo-av";
 import VideoPlayer from "expo-video-player";
 
@@ -38,28 +45,38 @@ const OpenCamera = ({ navigation }) => {
           shouldPlay: true,
           resizeMode: ResizeMode.CONTAIN,
           source: {
-            uri: "https://firebasestorage.googleapis.com/v0/b/temple-trading-hub-tth.appspot.com/o/images%2Ffire4.mp4?alt=media&token=e160ad40-6739-4879-b1ca-f6fe95c2417c",
+            uri: "https://firebasestorage.googleapis.com/v0/b/temple-trading-hub-tth.appspot.com/o/fire4.mp4?alt=media&token=4c6968b8-85d7-4428-a5ca-21592879aec8",
           },
         }}
       />
       <View>
-        <Text>
-          {"\n\n\n\n"}AUTOMATION _ NOTHING{"\n"}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            paddingHorizontal: 20,
+            paddingTop: 20,
+          }}
+        >
+          <TouchableOpacity style={styles.roundedButton} onPress={() => {}}>
+            <Text style={styles.buttonText}>Record Clip</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.roundedButton} onPress={() => {}}>
+            <Text style={styles.buttonText}>Take Picture</Text>
+          </TouchableOpacity>
+        </View>
+        <Text style={{ paddingHorizontal: 20, paddingTop: 20 }}>
+          View saved in activity
         </Text>
-        <Text>
-          {"\n\n\n\n"}AUTOMATION _ NOTHING{"\n"}
+        <Text style={{ paddingHorizontal: 20, paddingTop: 20 }}>
+          Add 24/7 video recording{"\n"}
         </Text>
-        <Text>
-          {"\n\n\n\n"}AUTOMATION _ NOTHING{"\n"}
-        </Text>
-        <Text>
-          {"\n\n\n\n"}AUTOMATION _ NOTHING{"\n"}
-        </Text>
-        <Text>
-          {"\n\n\n\n"}
-          <Button title="Call" onPress={() => makeCall()} />
-          {"\n"}
-        </Text>
+        <TouchableOpacity style={styles.roundedButton} onPress={() => {}}>
+          <Text style={styles.buttonText}>Learn More</Text>
+        </TouchableOpacity>
+        <Text> {"\n\n"}</Text>
+        <Button title="Call" onPress={() => makeCall()} />
+        <Text> {"\n\n"}</Text>
       </View>
     </ScrollView>
   );
@@ -73,6 +90,19 @@ const styles = StyleSheet.create({
   video: {
     width: "100%",
     height: 300,
+  },
+  roundedButton: {
+    backgroundColor: "#007AFF",
+    borderRadius: 25,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 10,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
   },
 });
 
