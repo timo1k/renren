@@ -24,7 +24,7 @@ const TabNavigator = () => {
       }}
     >
       <Tab.Screen
-        name="Overview"
+        name="Xfinity Home Explorer"
         component={Home}
         options={{
           tabBarIcon: ({ color, size }) => (

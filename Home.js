@@ -22,9 +22,9 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <ScrollView>
-      <Text style={{ fontSize: 24, textAlign: "center", fontWeight: "bold" }}>
-        {"\n"}Xfinity Home Explorer{"\n"}
-      </Text>
+      <Text
+        style={{ fontSize: 24, textAlign: "center", fontWeight: "bold" }}
+      ></Text>
       <TouchableOpacity onPress={handleImagePress}>
         <Text style={{ textAlign: "left", fontWeight: "bold" }}>
           Living Room {"\n"}
