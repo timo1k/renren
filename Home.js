@@ -4,22 +4,20 @@ import {
   Text,
   Image,
   ScrollView,
-  TextInput,
   Dimensions,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
-import Camera from "./Camera"; // Import your Camera component
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = ({ navigation }) => {
   const screenWidth = Dimensions.get("window").width;
 
   const handleImagePress = () => {
-    navigation.navigate("Camera"); // Navigate to the 'Camera' screen
+    navigation.navigate("Camera");
   };
   const handleImagePress2 = () => {
-    navigation.navigate("Video"); // Navigate to the 'Camera' screen
+    navigation.navigate("Video");
   };
 
   return (
@@ -50,24 +48,8 @@ const HomeScreen = ({ navigation }) => {
       </TouchableOpacity>
 
       <Text>{"\n\n\n\n"}</Text>
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: "gray",
-          borderWidth: 1,
-        }}
-        defaultValue="You can type"
-      />
-      <Text>{"\n\n\n\n"}</Text>
 
-      <Image
-        source={require("./assets/need5.png")}
-        style={{
-          width: screenWidth,
-          aspectRatio: 4 / 3,
-          resizeMode: "contain",
-        }}
-      />
+      <Image source={require("./assets/need5.png")} />
     </ScrollView>
   );
 };
