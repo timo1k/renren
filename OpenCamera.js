@@ -4,7 +4,28 @@ import { ResizeMode } from "expo-av";
 import VideoPlayer from "expo-video-player";
 
 const OpenCamera = ({ navigation }) => {
-  const video = require("./assets/fire4.mp4");
+  async function makeCall() {
+    try {
+      const response = await fetch(
+        "https://s7dkaywo3bhmh7gcypxd4e7ley0ybsie.lambda-url.us-east-1.on.aws/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            phoneNumber: "2674324401",
+          }),
+        }
+      );
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text>
@@ -35,7 +56,9 @@ const OpenCamera = ({ navigation }) => {
           {"\n\n\n\n"}AUTOMATION _ NOTHING{"\n"}
         </Text>
         <Text>
-          {"\n\n\n\n"}AUTOMATION _ NOTHING{"\n\n\n\n"}
+          {"\n\n\n\n"}
+          <Button title="Call" onPress={() => makeCall()} />
+          {"\n"}
         </Text>
       </View>
     </ScrollView>
@@ -49,7 +72,7 @@ const styles = StyleSheet.create({
   },
   video: {
     width: "100%",
-    height: 300, // Adjust height as needed
+    height: 300,
   },
 });
 

@@ -44,8 +44,6 @@ export default function ViewCamera() {
         <Button title="Go Back" onPress={() => navigation.goBack()} />
         <Text> {"\n\n"}</Text>
       </View>
-
-      {/* Button to go back */}
     </View>
   );
 }

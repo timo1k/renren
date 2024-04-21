@@ -20,7 +20,7 @@ const Profile = () => {
             source={require("./assets/need.png")}
             style={{
               width: screenWidth,
-              height: screenHeight, // Set the height to the screen height
+              height: screenHeight,
               resizeMode: "contain",
             }}
           />
@@ -33,11 +33,11 @@ const Profile = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start", // Align content at the top
+    justifyContent: "flex-start",
     alignItems: "center",
   },
   content: {
-    marginTop: 0, // Ensure the image starts from the top of the phone
+    marginTop: 0,
     alignItems: "center",
   },
 });
