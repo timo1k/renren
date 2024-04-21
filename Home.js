@@ -22,9 +22,9 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <ScrollView>
-      <Text
-        style={{ fontSize: 24, textAlign: "center", fontWeight: "bold" }}
-      ></Text>
+      <Text style={{ fontSize: 24, textAlign: "center", fontWeight: "bold" }}>
+        {"\n"}
+      </Text>
       <TouchableOpacity onPress={handleImagePress}>
         <Text style={{ textAlign: "left", fontWeight: "bold" }}>
           Living Room {"\n"}
@@ -47,9 +47,11 @@ const HomeScreen = ({ navigation }) => {
         </View>
       </TouchableOpacity>
 
-      <Text>{"\n\n\n\n"}</Text>
-
-      <Image source={require("./assets/need5.png")} />
+      <Image
+        source={require("./assets/need5.png")}
+        style={{ width: 390, height: 1000 }}
+        resizeMode="contain"
+      />
     </ScrollView>
   );
 };

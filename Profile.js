@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Image, ScrollView, StyleSheet, Dimensions, Text } from "react-native";
+import {
+  View,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Dimensions,
+  Text,
+} from "react-native";
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
@@ -15,7 +22,7 @@ const Profile = () => {
               width: screenWidth,
               height: screenHeight, // Set the height to the screen height
               resizeMode: "contain",
-            }} 
+            }}
           />
         </View>
       </View>
@@ -32,7 +39,7 @@ const styles = StyleSheet.create({
   content: {
     marginTop: 0, // Ensure the image starts from the top of the phone
     alignItems: "center",
-  }
+  },
 });
 
 export default Profile;
