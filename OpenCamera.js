@@ -21,7 +21,7 @@ const OpenCamera = ({ navigation }) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            phoneNumber: "2674324401",
+            // phoneNumber: "2674324401",
           }),
         }
       );
